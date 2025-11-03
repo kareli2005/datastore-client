@@ -18,15 +18,11 @@ type RecentItem = {
 
 const SideBar = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const [recents, setRecents] = useState<RecentItem[]>([
-        { title: "Dashboard Overview", url: "/dashboard" },
-        { title: "New Category", url: "/categories/new" },
-        { title: "Settings", url: "/settings" },
-    ]);
+    const [recents, setRecents] = useState<RecentItem[]>([]);
 
     return (
         <div
-            className="p-4 gap-1 h-full bg-x-grey flex flex-col duration-200 ease-in-out transition-[width] overflow-hidden"
+            className="sidebar p-4 gap-1 h-full bg-x-grey flex flex-col duration-200 ease-in-out transition-[width] overflow-hidden"
             style={{ width: isOpen ? "300px" : "72px" }}
         >
             {/* Top Menu */}

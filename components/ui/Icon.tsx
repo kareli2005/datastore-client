@@ -12,7 +12,7 @@ const Icon: React.FC<Props> = ({ icon: IconComponent, onClick, size = 20, color 
     return (
         <div
             onClick={onClick}
-            className="rounded-full aspect-square w-10 h-10 flex justify-center items-center hover:bg-x-grey-dark cursor-pointer transition duration-200 ease-in-out"
+            className="rounded-full aspect-square w-10 h-10 flex justify-center items-center hover:bg-x-grey-dark hover: cursor-pointer transition duration-200 ease-in-out"
         >
             <IconComponent width={size} height={size} color={color} />
         </div>

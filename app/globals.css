@@ -4,8 +4,9 @@
     --background: #ffffff;
     --foreground: #171717;
     --text-color: #444746;
-    --x-grey: #f7f9fb;
+    --x-grey: #f0f4f9;
     --x-grey-dark: #e2e7eb;
+    --x-blue: #356df2;
 }
 
 @theme inline {
@@ -15,14 +16,15 @@
     --font-mono: var(--font-geist-mono);
     --color-x-grey: var(--x-grey);
     --color-x-grey-dark: var(--x-grey-dark);
+    --color-x-blue: var(--x-blue);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --background: #0a0a0a;
         --foreground: #ededed;
     }
-}
+} */
 
 body {
     /* background: var(--background);
@@ -37,7 +39,7 @@ body {
 
 .header {
     width: 100%;
-    height: 60px;
+    min-height: 60px;
     border-bottom: solid 1px var(--color-x-grey-dark);
     display: flex;
     justify-content: start;
@@ -45,10 +47,44 @@ body {
     padding: 0 16px;
 }
 
+.main-btn {
+    border-radius: 20px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+    background-color: var(--color-x-grey);
+    border: none;
+    cursor: pointer;
+    transition: 200ms;
+    font-weight: bold;
+}
+
+.main-btn:hover {
+    color: var(--color-x-blue);
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    border: solid 1px var(--color-x-grey-dark);
+    border-radius: 10px;
+}
+
 @media (min-width: 1024px) {
     .sidebar-container {
         width: auto;
         height: 100%;
         display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-btn {
+        height: 32px;
+        padding: 0 12px;
+        font-weight: 500;
     }
 }
