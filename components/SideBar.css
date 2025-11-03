@@ -1,15 +1,48 @@
 .sidebar-row {
-    min-height: 48px;
+    height: 40px;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
 }
 
-.sidebar-icon {
-    width: 32px;
-    height: 32px;
-    color: var(--color-foreground);
+.sidebar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    gap: 4px;
     cursor: pointer;
-    transition: color 0.2s ease-in-out;
-    cursor: pointer;
+    border-radius: 20px;
+    height: 40px;
+    font-weight: semi-bold;
+    text-wrap: nowrap;
+    user-select: none;
+}
+
+.sidebar-btn:hover {
+    background-color: var(--color-x-grey-dark);
+}
+
+.sidebar-recents-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.sidebar-recents-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-recents-header {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.sidebar-recents-scroll {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
 }
