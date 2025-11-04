@@ -73,6 +73,10 @@ body {
     border-radius: 10px;
 }
 
+svg {
+    /* fill: var(--text-color); */
+}
+
 @media (min-width: 1024px) {
     .sidebar-container {
         width: auto;

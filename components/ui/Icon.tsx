@@ -1,20 +1,28 @@
 import React from "react";
-import { SvgIconProps } from "@mui/material/SvgIcon";
+import { LucideIcon } from "lucide-react";
 
 type Props = {
-    icon: React.ElementType<SvgIconProps>;
-    size?: 20 | 24 | 32;
-    color?: "inherit";
+    icon: LucideIcon;
+    size?: 16 | 20 | 24 | 32;
+    color?: string;
     onClick?: () => void;
+    className?: string;
+    hoverColor?: string;
 };
 
-const Icon: React.FC<Props> = ({ icon: IconComponent, onClick, size = 20, color = "inherit" }) => {
+const Icon: React.FC<Props> = ({
+    icon: IconComponent,
+    onClick,
+    size = 20,
+    color = "#444746",
+    hoverColor = "x-grey-dark",
+}) => {
     return (
         <div
             onClick={onClick}
-            className="rounded-full aspect-square w-10 h-10 flex justify-center items-center hover:bg-x-grey-dark hover: cursor-pointer transition duration-200 ease-in-out"
+            className={`rounded-full aspect-square w-10 h-10 flex justify-center items-center cursor-pointer transition duration-200 ease-in-out hover:bg-${hoverColor}`}
         >
-            <IconComponent width={size} height={size} color={color} />
+            <IconComponent size={size} color={color} />
         </div>
     );
 };

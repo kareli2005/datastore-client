@@ -1,13 +1,8 @@
 "use client";
+
 import Link from "next/link";
 import "./SideBar.css";
-import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import BorderColorOutlinedIcon from "@mui/icons-material/BorderColorOutlined";
-import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import SearchIcon from "@mui/icons-material/Search";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import { Menu, Settings, SquarePen, LayoutGrid, ArrowLeft, Search, Home } from "lucide-react";
 import Icon from "./ui/Icon";
 import { useState } from "react";
 
@@ -29,13 +24,13 @@ const SideBar = () => {
             <div className="sidebar-row relative">
                 {isOpen ? (
                     <>
-                        <Icon icon={ArrowBackIcon} onClick={() => setIsOpen(false)} />
+                        <Icon icon={ArrowLeft} onClick={() => setIsOpen(false)} />
                         <div className="absolute top-0 right-0">
-                            <Icon icon={SearchIcon} />
+                            <Icon icon={Search} />
                         </div>
                     </>
                 ) : (
-                    <Icon icon={MenuRoundedIcon} onClick={() => setIsOpen(true)} />
+                    <Icon icon={Menu} onClick={() => setIsOpen(true)} />
                 )}
             </div>
 
@@ -44,21 +39,21 @@ const SideBar = () => {
             {/* Main Links */}
             <div className="sidebar-row">
                 <Link href="/" className="sidebar-btn">
-                    <Icon icon={HomeOutlinedIcon} />
+                    <Icon icon={Home} />
                     {isOpen && <p>Main</p>}
                 </Link>
             </div>
 
             <div className="sidebar-row">
                 <Link href="/categories" className="sidebar-btn">
-                    <Icon icon={CategoryOutlinedIcon} />
+                    <Icon icon={LayoutGrid} />
                     {isOpen && <p>Categories</p>}
                 </Link>
             </div>
 
             <div className="sidebar-row">
                 <Link href="/categories/new" className="sidebar-btn">
-                    <Icon icon={BorderColorOutlinedIcon} />
+                    <Icon icon={SquarePen} />
                     {isOpen && <p>New Category</p>}
                 </Link>
             </div>
@@ -74,7 +69,7 @@ const SideBar = () => {
                         {recents.length > 0 ? (
                             recents.map((recent, index) => (
                                 <Link key={index} href={recent.url} className="sidebar-btn">
-                                    {/* <p>{recent.title}</p> */}
+                                    <p>{recent.title}</p>
                                 </Link>
                             ))
                         ) : (
@@ -87,7 +82,7 @@ const SideBar = () => {
             {/* Settings */}
             <div className="sidebar-row mt-auto">
                 <Link href="/settings" className="sidebar-btn">
-                    <Icon icon={SettingsOutlinedIcon} />
+                    <Icon icon={Settings} />
                     {isOpen && <p>Settings</p>}
                 </Link>
             </div>
