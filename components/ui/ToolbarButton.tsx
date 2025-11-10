@@ -2,13 +2,13 @@
 import React from "react";
 
 type Props = {
-    onclick?: () => void;
+    onClick?: () => void;
     text: string;
 };
 
-const ToolbarButton = ({ onclick, text }: Props) => {
+const ToolbarButton = ({ onClick, text }: Props) => {
     return (
-        <button className="main-btn" onClick={onclick}>
+        <button className="main-btn" onClick={onClick}>
             {text}
         </button>
     );

@@ -2,12 +2,12 @@
 
 import React, { useRef } from "react";
 import { Upload, X } from "lucide-react";
-import Icon from "./Icon";
+import Icon from "../Icon";
 
 type FileItem = {
     name: string;
     size: number;
-    url?: string; // for preview (optional)
+    url?: string;
 };
 
 type Props = {
@@ -71,7 +71,7 @@ const Files = (props: Props) => {
                             </div>
                             {onRemove && (
                                 <button onClick={() => onRemove(i)}>
-                                    <Icon icon={X} size={16} hoverColor="red-400" />
+                                    <Icon icon={X} size={16} color="red" />
                                 </button>
                             )}
                         </div>
