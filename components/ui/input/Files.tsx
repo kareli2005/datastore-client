@@ -71,7 +71,7 @@ const Files = (props: Props) => {
                             </div>
                             {onRemove && (
                                 <button onClick={() => onRemove(i)}>
-                                    <Icon icon={X} size={16} color="red" />
+                                    <Icon icon={X} size={16} bgHover="red" />
                                 </button>
                             )}
                         </div>

@@ -76,7 +76,7 @@ const KeyVal = ({ name, must, onChange, initialRows = [] }: Props) => {
                         icon={X}
                         size={16}
                         onClick={() => handleRemoveRow(index)}
-                        color={rows.length === 1 ? "gray" : "red"}
+                        bgHover="red"
                         className={rows.length === 1 ? "cursor-not-allowed opacity-50" : ""}
                     />
                 </div>
